@@ -1,11 +1,13 @@
 <template>
-  <router-link to="/add-product" class="add-button">AGREGAR PRODUCTO</router-link>
+  <router-link to="/add-product" class="add-button"
+    >AGREGAR PRODUCTO</router-link
+  >
 </template>
 <style>
 .add-button {
   width: 230px;
   height: 45px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   padding: 10px;
   background-color: #ffffff;

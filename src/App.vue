@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import { RouterView } from 'vue-router'
+import { RouterView } from "vue-router";
 import Login from "./components/Login.vue";
 import ProductosView from "./views/ProductosView.vue";
 export default {
   name: "App",
   components: {
     Login,
-    ProductosView
+    ProductosView,
   },
 };
 </script>

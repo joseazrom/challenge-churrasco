@@ -163,7 +163,6 @@ export default {
 .back-button {
   display: flex;
   align-items: center;
-
   margin: 5% 0 0 5%;
   border-radius: 10px;
   color: rgb(87, 57, 169);
@@ -191,7 +190,7 @@ export default {
   width: 900px;
   background-color: white;
   border-radius: 25px;
-  margin: 7% 0 7%;
+  margin: 5% 0 5%;
 }
 .title {
   display: flex;

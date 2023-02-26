@@ -7,11 +7,7 @@
     </div>
 
     <div class="product-grid">
-      <div
-        v-for="product in products"
-        :key="product._id"
-        class="product-card"
-      >
+      <div v-for="product in products" :key="product._id" class="product-card">
         <img
           :src="product.pictures"
           :alt="product.name"
@@ -81,11 +77,11 @@ export default {
   font-size: 47px;
   color: white;
 }
-.btn-logout{
-    display: flex;
-    color: white;
-    font-size: 25px;
-    font-family: "Montserrat", sans-serif;
+.btn-logout {
+  display: flex;
+  color: white;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
 }
 .product-grid {
   display: flex;

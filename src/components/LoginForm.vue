@@ -119,6 +119,7 @@ export default {
   align-items: center;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  border-bottom: 1px solid rgba(146, 146, 146, 0.253);
 }
 .password {
   display: flex;

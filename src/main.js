@@ -3,7 +3,7 @@ import App from "./App.vue";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import router from "./router";
-import vuetify from './plugins/vuetify'
+import vuetify from "./plugins/vuetify";
 
 var token = localStorage.getItem("token");
 if (token) axios.defaults.headers.common["Authorization"] = "Bearer " + token;

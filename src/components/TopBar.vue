@@ -1,16 +1,18 @@
 <template>
   <div class="topbar">
-    <img src="../assets/logos/logo-churrasco.png" alt="Logo" class="logo-topbar" />
+    <img
+      src="../assets/logos/logo-churrasco.png"
+      alt="Logo"
+      class="logo-topbar"
+    />
     <button class="btn-logout" @click="logout">
-      <img class="icon-logout" src="../assets/icons/icon-logout.png" alt="">
+      <img class="icon-logout" src="../assets/icons/icon-logout.png" alt="" />
       <h1 class="text-btn">Cerrar Sesión</h1>
     </button>
   </div>
 </template>
 
 <script>
-
-
 export default {
   methods: {
     logout() {
@@ -18,7 +20,6 @@ export default {
       this.$router.push("/login");
     },
   },
-  
 };
 </script>
 
@@ -34,11 +35,11 @@ export default {
 }
 
 .logo-topbar {
-    padding-left:2.7%;
+  padding-left: 2.7%;
   width: 140px;
   height: 60px;
 }
-.btn-logout{
+.btn-logout {
   display: flex;
   padding-right: 2.3%;
   align-items: center;
@@ -47,14 +48,12 @@ export default {
   justify-content: space-around;
   border-radius: 7px;
 }
-.icon-logout{
+.icon-logout {
   width: 20px;
   height: 20px;
   background-color: transparent;
 }
-.text-btn{
+.text-btn {
   font-size: 17px;
-
 }
-
 </style>
