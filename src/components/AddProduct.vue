@@ -275,7 +275,7 @@ input[type="number"] {
 }
 
 .button-send:hover {
-  background-color: #a689c52f;
+  background-color: #6140b6a1;
 }
 
 .button-send:active {
