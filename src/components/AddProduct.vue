@@ -95,7 +95,7 @@
         </div>
       </div>
       <div class="button-container">
-        <button class="button-add" type="submit">Enviar producto</button>
+        <button class="button-send" type="submit">Enviar producto</button>
       </div>
     </form>
   </div>
@@ -259,7 +259,7 @@ input[type="number"] {
   border-radius: 10px;
 }
 
-.button-add {
+.button-send {
   display: flex;
   width: 157px;
   height: 50px;
@@ -274,11 +274,11 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.button-add:hover {
-  background-color: #55387579;
+.button-send:hover {
+  background-color: #a689c52f;
 }
 
-.button-add:active {
+.button-send:active {
   background-color: #5e249582;
 }
 .button-add-img {
@@ -297,7 +297,7 @@ input[type="number"] {
 }
 
 .button-add-img:hover {
-  background-color: #8f6ab779;
+  background-color: #a384c432;
 }
 
 .button-add-img:active {

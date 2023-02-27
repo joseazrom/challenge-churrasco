@@ -5,18 +5,21 @@
       <h1 class="title">NUESTROS PRODUCTOS</h1>
       <AddProductBtn />
     </div>
-
     <div class="product-grid">
-      <div v-for="product in products" :key="product._id" class="product-card">
+      <div
+        v-for="(product, index) in products"
+        :key="product._id"
+        class="product-card"
+      >
         <img
-          :src="product.pictures"
+          :src="getProductPicture(product)"
           :alt="product.name"
           class="product-image"
         />
         <h2 class="product-name">{{ product.name }}</h2>
         <p class="product-description">{{ product.description }}</p>
         <p class="product-price">{{ product.currency }} {{ product.price }}</p>
-        <div class="container-code">
+        <div class="container-code mt-8">
           <p class="product-code">
             SKU: {{ product.SKU }} | Code: {{ product.code }}
           </p>
@@ -25,7 +28,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import TopBar from "../components/TopBar.vue";
 import AddProductBtn from "../components/Buttons/AddProductBtn.vue";
@@ -46,11 +48,33 @@ export default {
       }
     );
     this.products = data.reverse();
+
+    this.currentIndexByProduct = {};
+    this.products.forEach((product, index) => {
+      if (product.pictures.length > 1) {
+        this.currentIndexByProduct[product._id] = 0;
+        setInterval(() => {
+          this.currentIndexByProduct[product._id] =
+            (this.currentIndexByProduct[product._id] + 1) %
+            product.pictures.length;
+        }, 2500);
+      }
+    });
   },
   data() {
     return {
       products: [],
+      currentIndexByProduct: {},
     };
+  },
+  methods: {
+    getProductPicture(product) {
+      if (product.pictures.length === 1) {
+        return product.pictures[0];
+      } else {
+        return product.pictures[this.currentIndexByProduct[product._id]];
+      }
+    },
   },
 };
 </script>
@@ -92,7 +116,7 @@ export default {
 .product-card {
   display: flex;
   width: 28.1%;
-  height: 420px;
+  height: 440px;
   flex-direction: column;
   align-items: flex-start;
   margin: 40px;
@@ -116,25 +140,27 @@ export default {
   margin-top: 0px;
   margin-bottom: 20px;
   border-radius: 25px;
+  box-shadow: 3px 3px 3px rgba(83, 80, 89, 0.64);
 }
 
 .product-name {
   margin: 0;
   font-family: "Sora", sans-serif;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: bold;
   text-align: center;
 }
 
 .product-description {
   font-family: "Sora", sans-serif;
-  margin: 5px 0 35px;
-  font-size: 16px;
+  margin: 5px 0;
+  height: 50px;
+  font-size: 15px;
   text-align: center;
 }
 
 .product-price {
-  margin: 5px 0;
+  margin-top: 15px;
   font-size: 18px;
   font-weight: bold;
   color: #e91e1e;
@@ -142,8 +168,8 @@ export default {
 .container-code {
   display: flex;
   width: 100%;
+  margin-top: 15px;
   justify-content: end;
-  padding-top: 20px;
 }
 .product-code {
   font-family: "Pathway Gothic One", sans-serif;

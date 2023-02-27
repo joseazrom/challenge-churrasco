@@ -22,12 +22,12 @@
       <div class="container-buttons mt-2.5">
         <div class="checkbox-container">
           <input type="checkbox" id="remember" v-model="remember" />
-          <label for="checked"> remember </label>
+          <label class="label-checkbox ml-2" for="checked"> remember </label>
         </div>
-        <div class="button">
+        <div class="button-login">
           <input
             type="submit"
-            value="Log In"
+            value="Log in"
             title="Enviar"
             class="button-login"
           />
@@ -148,11 +148,19 @@ input:focus {
   height: 40px;
   background-color: rgb(66, 50, 145);
   color: white;
+  font-weight: bold;
   border-radius: 6px;
   border: none;
   cursor: pointer;
 }
 .checkbox-container {
+  display: flex;
   color: rgb(164, 164, 164);
+  align-items: center;
+}
+.label-checkbox {
+  font-size: 10px;
+  font-weight: normal;
+  letter-spacing: 0.8px;
 }
 </style>
